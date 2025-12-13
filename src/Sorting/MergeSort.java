@@ -14,7 +14,7 @@ public class MergeSort {
 
         }
         int low=0,high=n-1;
-        mergeSort(arr, low , high);
+        mergeSort(arr, low , high); // call for mergesort
         for(int i = 0; i< n;i++){
             System.out.print(arr[i]+" ");
         }
@@ -25,9 +25,9 @@ public class MergeSort {
             return;
         }
         int mid = (low+high)/2;
-        mergeSort(arr, low , mid);
-        mergeSort(arr, mid+1, high);
-        merge(arr, low , mid, high);
+        mergeSort(arr, low , mid);  // split the array for first half
+        mergeSort(arr, mid+1, high); // split the array for second half
+        merge(arr, low , mid, high); // merging the two arrays in sorted way
     }
 
     private static void merge(int[] arr, int low, int mid, int high) {
