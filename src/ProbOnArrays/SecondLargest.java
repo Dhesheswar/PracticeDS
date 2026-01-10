@@ -22,3 +22,5 @@ public class SecondLargest {
         System.out.println("Largest : "+largest+" | "+"Second Largest : "+secondLargest);
     }
 }
+//9
+//3 1 2 4 1 5 2 6 4
