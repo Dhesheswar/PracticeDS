@@ -2,6 +2,7 @@ package ProbOnArrays;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class LeftRotateByd {
@@ -13,10 +14,18 @@ public class LeftRotateByd {
             arr[i] = sc.nextInt();
         }
         int d = sc.nextInt();
-        reverseArray(arr,0,d-1);
-        reverseArray(arr,d,n-1);
-        reverseArray(arr,0,n-1);
-
+        System.out.println("Enter 1 to rotate left and 2 to rotate right");
+        int r = sc.nextInt();
+        if(r == 1) {
+            reverseArray(arr, 0, d - 1);
+            reverseArray(arr, d, n - 1);
+            reverseArray(arr, 0, n - 1);
+        }
+        else if(r==2) {
+            reverseArray(arr, 0, n - 1);
+            reverseArray(arr, 0, d - 1);
+            reverseArray(arr, d, n - 1);
+        }
         for(int i=0;i<n;i++){
             System.out.print(arr[i] + " ");
         }
@@ -36,3 +45,8 @@ public class LeftRotateByd {
         arr[j] = temp;
     }
 }
+
+//7
+//3 2 1 7 6 5 4
+//3
+//2
