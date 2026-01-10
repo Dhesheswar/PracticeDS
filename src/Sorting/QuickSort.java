@@ -33,10 +33,10 @@ public class QuickSort {
         int i=low,j=high;
         int pivot = low;
         while(i<j){
-            while(i<=high && arr[i]<=arr[pivot]) {
+            while(i<=high-1 && arr[i]<=arr[pivot]) {
                 i++;
             }
-            while(j>=low && arr[j]>arr[pivot]){
+            while(j>=low+1 && arr[j]>arr[pivot]){
                 j--;
             }
             if(i<j) swap(arr,i,j);
