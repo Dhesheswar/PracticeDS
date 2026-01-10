@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static java.util.Collections.swap;
-
-public class QiuckSort {
+public class QuickSort {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new File("src/input.txt"));
         int n = sc.nextInt();
@@ -35,23 +33,23 @@ public class QiuckSort {
         int i=low,j=high;
         int pivot = low;
         while(i<j){
-            while(arr[i]<=arr[pivot] && i<=high){
+            while(i<=high && arr[i]<=arr[pivot]) {
                 i++;
             }
-            while(arr[j]>arr[pivot] && j>=low){
+            while(j>=low && arr[j]>arr[pivot]){
                 j--;
             }
-            if(i<j) swap(arr[i],arr[j]);
+            if(i<j) swap(arr,i,j);
         }
-        swap(arr[pivot],arr[j]);
+        swap(arr,pivot,j);
         partition = j;
         return partition;
     }
 
-    private static void swap(int i, int i1) {
-        int temp = i;
-        i = i1;
-        i1 = temp;
+    private static void swap(int[] arr,int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
 }
