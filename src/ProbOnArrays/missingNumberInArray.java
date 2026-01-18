@@ -9,19 +9,17 @@ public class missingNumberInArray {
         Scanner sc = new Scanner(new File("src/input.txt"));
         int n = sc.nextInt();
         int[] arr = new int[n];
-        int max = -1;
         for(int i=0;i<n;i++){
             arr[i] = sc.nextInt();
-            if(arr[i]>max) max = arr[i];
         }
-        int resultSum = findMissingBySum(arr,max);
-        int resultXor = findMissingByXor(arr,max);
+        int resultSum = findMissingBySum(arr);
+        int resultXor = findMissingByXor(arr,n);
         System.out.println(resultSum);
         System.out.println(resultXor);
     }
 
-    private static int findMissingBySum(int[] arr,int max) {
-        int n = max;
+    private static int findMissingBySum(int[] arr) {
+        int n = arr.length+1;
         int sumOfN = (n*(n+1))/2;
         int sumOfArray = 0;
         for(int i=0;i<arr.length;i++){
@@ -30,13 +28,17 @@ public class missingNumberInArray {
         return sumOfN-sumOfArray;
     }
 
-    private static int findMissingByXor(int[] arr,int max) {
-        int xor1=arr[0],xor2=1;
-        for(int i=0;i<arr.length;i++){
-            xor2 = xor2^arr[i];
-            xor1 = xor1^(i+1);
+    private static int findMissingByXor(int[] arr,int n) {
+        int xor1=0,xor2=0;
+        for(int i=0;i<n-1;i++){
+            xor2 = xor2 ^ arr[i];
+            xor1 = xor1 ^ (i+1); // run on same loop to be optimized
         }
-        xor1 = xor1^max;
-        return xor1^xor2;
+        xor1 = xor1 ^ n;
+        return xor1 ^ xor2;
     }
 }
+/*
+4
+1 2 4 5
+ */
