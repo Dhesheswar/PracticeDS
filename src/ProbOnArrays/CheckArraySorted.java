@@ -8,14 +8,21 @@ public class CheckArraySorted {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new File("src/input.txt"));
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        int[] nums = new int[n];
         for(int i=0;i<n;i++){
-            arr[i] = sc.nextInt();
+            nums[i] = sc.nextInt();
         }
+        int count = 0;
+        boolean result = true;
         for(int i=1;i<n;i++){
-            if(arr[i]<arr[i-1]) System.out.println("Not sorted");
-            return;
+            if(nums[i] < nums[i-1]){
+                result = false;
+                count++;
+            }
         }
-        System.out.println("Sorted");
+        if(count <= 1 && !result){
+            System.out.println(true);return;
+        }
+        System.out.println(result);
     }
 }
