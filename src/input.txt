@@ -1,1 +1,2 @@
-A man, a plan, a canal: Panama
+6
+7 7 3 2 4 3
