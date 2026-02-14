@@ -67,3 +67,6 @@ public class SortWith0s1s2s {
             arr[b]=temp;
     }
 }
+
+//11
+//        0 1 1 0 1 2 1 2 0 0 0
