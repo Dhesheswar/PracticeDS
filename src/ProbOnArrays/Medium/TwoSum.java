@@ -17,20 +17,24 @@ public class TwoSum{
             arr[i] = sc.nextInt();
         }
         int target = sc.nextInt();
-        boolean result = FindTwoSumSorted(arr,target,n);
+        int[] result = FindTwoSum(arr,target,n);
         boolean resultSorted = FindTwoSumSorted(arr,target,n);
-        System.out.println(result);
+        for(int i : result) {
+            System.out.println(i);
+        }
         System.out.println(resultSorted);
 
     }
-    public static boolean FindTwoSum(int[] arr, int target, int n){
+    public static int[] FindTwoSum(int[] nums, int target, int n){
         Map<Integer,Integer> hmap = new HashMap<>();
-        for(int i = 0; i<= n;i++){
-            if(hmap.containsKey(Math.abs(arr[i]-target))){
-                return true;
+        for(int i = 0; i<nums.length;i++){
+            int f = target - nums[i];
+            if(hmap.containsKey(f)){
+                return new int[]{hmap.get(f),i};
             }
+            hmap.put(nums[i],i);
         }
-        return false;
+        return new int[]{};
 
     }
     public static boolean FindTwoSumSorted(int[] arr, int target,int n){
