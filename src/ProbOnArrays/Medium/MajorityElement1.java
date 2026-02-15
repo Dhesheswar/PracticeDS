@@ -16,7 +16,25 @@ public class MajorityElement1 {
         }
         int resultBetter = findMarjorityElementBetter(arr,n);
         System.out.println(resultBetter);
-        //findMarjorityElementOptimal(arr,n);
+        int resultOptimal = findMarjorityElementOptimal(arr,n);
+        System.out.println(resultBetter);
+    }
+    // moore's voting algorithm
+    public static int findMarjorityElementOptimal(int[] arr, int n){
+        int majELement = 0;
+        int count = 0;
+        for(int i= 0 ;i<n;i++){
+            if(count == 0){
+                count=1;
+                majELement = arr[i];
+            }else if(arr[i] == majELement){
+                count++;
+            }else{
+                count--;
+            }
+        }
+        return majELement;
+        // kindly find the count of number when majority element may or may not present
     }
     public static int findMarjorityElementBetter(int[] arr, int n){
         Map<Integer,Integer> hmap = new HashMap<>();
