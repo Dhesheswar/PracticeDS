@@ -15,7 +15,9 @@ public class FirstandLastOccurance {
         int target = sc.nextInt();
         int[] res = new int[2];
         res = findFirstandLast(nums, n, target);
-        System.out.println(res[0]+" "+res[1]);
+        System.out.println("first occ : "+res[0]+" "+"last occ : "+res[1]);
+        System.out.println("Count of occurance : "+ countOccurance(res[0],res[1]));
+
     }
     public static int[] findFirstandLast(int[] nums, int n,int target){
         int first = findFirst(nums, n, target);
@@ -53,5 +55,8 @@ public class FirstandLastOccurance {
             }
         }
         return res;
+    }
+    public static int countOccurance(int first,int last){
+        return (first==-1) ? -1: last - first;
     }
 }
