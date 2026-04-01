@@ -19,7 +19,7 @@ public class binarySearchSorted {
     private static int binarySearch(int[] nums, int target, int start, int end){
         if(start > end) return -1;
         int res = -1;
-        int mid = ((start+end)/2) ;
+        int mid = (start+(end-start)/2) ;
         if (nums[mid] == target){
             return mid;
         }
@@ -27,7 +27,7 @@ public class binarySearchSorted {
             return binarySearch(nums, target,start, mid-1);
         }
         else{
-            return binarySearch(nums, target, mid+1, end-1);
+            return binarySearch(nums, target, mid+1, end);
         }
     }
 }
