@@ -15,7 +15,7 @@ public class ReverseString {
             System.out.print(i+" ");
         }
     }
-
+    // brute force
     public static String[] reverseTheString(String[] stringArray){
         int left = 0;
         int right = stringArray.length-1;
@@ -27,7 +27,7 @@ public class ReverseString {
         }
         return stringArray;
     }
-
+    // optimal approach
     public static void printReverseString(String s){
         int i = s.length()-1;
         int end;
