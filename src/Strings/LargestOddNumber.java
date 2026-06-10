@@ -16,6 +16,7 @@ public class LargestOddNumber {
         }
         String str = s.substring(j,s.length());
         String result="";
+        // printing largest od number
         for(int i = str.length()-1;i>=0;i--){
             if(((str.charAt(i)-'0') & 1) ==1){
                 result = str.substring(0,i+1);
