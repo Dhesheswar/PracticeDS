@@ -9,6 +9,7 @@ public class LargestOddNumber {
         Scanner sc = new Scanner(new File("src/input.txt"));
         String s = sc.nextLine();
         //String str = String.valueOf(Integer.parseInt(s));
+        // removing trainling zeros
         int j = 0;
         while(j<s.length()-1 && s.charAt(j) == '0'){
             j++;
