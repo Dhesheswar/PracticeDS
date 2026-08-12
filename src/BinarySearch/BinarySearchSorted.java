@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class BinarySearchSorted {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("src/input.txt"));
+        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] nums = new int[n];
         for(int i=0;i<n;i++){
